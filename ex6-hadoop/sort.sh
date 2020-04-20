@@ -1,0 +1,1 @@
+sort -k 2nr "$1" | head -n 10

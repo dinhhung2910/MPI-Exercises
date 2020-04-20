@@ -51,9 +51,9 @@ int main (void) {
 	// byte* sha256 = StringHashToByteArray(string3);
 	byte* sha256 = StringHashToByteArray(string4);
 	double start = omp_get_wtime();
-	// #pragma omp parallel for private(s)
-	for (int i = 97; i < 97+len; i++) {
-		s[0] = i;
+  #pragma omp parallel for private(s) collapse(4);
+	for (s[0] = 97; s[0] < 97+len; s[0]++) {
+		// s[0] = i;
 		for (s[1] = 97; s[1] < 97+len; s[1]++)
 			for (s[2] = 97; s[2] < 97+len; s[2]++)
 				for (s[3] = 97; s[3] < 97+len; s[3]++) {
@@ -65,5 +65,6 @@ int main (void) {
 
 	double delta = omp_get_wtime() - start;
 	printf("Total time: %.6f seconds\n", delta);
+	
 	return 0;
 }
