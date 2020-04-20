@@ -31,6 +31,8 @@ ex4/*.svg
 
 ex6-hadoop/output/*
 ex6-hadoop/output.txt
+ex6-hadoop/kmer-jav/output/*
+ex6-hadoop/kmer-jav/output.txt
 
 ### C ###
 # Prerequisites
