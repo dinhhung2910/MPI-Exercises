@@ -29,6 +29,7 @@ bin/hdfs dfs -get /kmer/output output2
 
 #sort and head
 sort -r -k 2 ./output2/part-00000 > ./output2/sorted.txt && head ./output2/sorted.txt
+head ./output/output/sorted.txt // sai cmnr
 
 
 
