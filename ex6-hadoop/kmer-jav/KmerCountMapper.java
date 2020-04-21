@@ -16,6 +16,7 @@ import org.apache.hadoop.mapreduce.Mapper.Context;
  * and emit them as (<b>kmer</b>, <b>1</b>).
  *
  * @author Mahmoud Parsian
+ * Định nghĩa kiểu giá trị đầu vào và trung gian
  */
 
 public class KmerCountMapper
@@ -41,6 +42,7 @@ public class KmerCountMapper
       for (int i=0; i < sequence.length() -k+1; i++) {
          String kmer = KmerUtil.getKmer(sequence, i, k);
          kmerKey.set(kmer);
+         // Ghi ra cặp giá trị mới
          context.write(kmerKey, ONE);
       }
    }
