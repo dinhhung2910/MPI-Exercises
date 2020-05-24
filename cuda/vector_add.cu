@@ -44,12 +44,12 @@ int main(){
     // Transfer data back to host memory
     cudaMemcpy(out, d_out, sizeof(float) * N, cudaMemcpyDeviceToHost);
 
-    // // Verification
-    // for(int i = 0; i < N; i++){
-    //     assert(fabs(out[i] - a[i] - b[i]) < MAX_ERR);
-    // }
-    // printf("out[0] = %f\n", out[0]);
-    // printf("PASSED\n");
+    // Verification
+    for(int i = 0; i < N; i++){
+        assert(fabs(out[i] - a[i] - b[i]) < MAX_ERR);
+    }
+    printf("out[0] = %f\n", out[0]);
+    printf("PASSED\n");
 
     // Deallocate device memory
     cudaFree(d_a);
