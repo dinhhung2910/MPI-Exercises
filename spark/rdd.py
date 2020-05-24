@@ -15,7 +15,7 @@ if __name__ == "__main__":
     numberInCountry = fileDataFilter.count()
     numberCountry = fileDataGroup.count()
 
-    airpotsCount.saveAsTextFile("./output/")
+    # airpotsCount.saveAsTextFile("./output/")
     print("Number Airport Papua New Guinea " + str(numberInCountry))
     print("Number Country " + str(numberCountry))
 
@@ -28,7 +28,7 @@ if __name__ == "__main__":
     joinRDD = fileData.join(routesRDD)
 
     fightCount = joinRDD.map(lambda  x : (x[1][0][2], 1)).reduceByKey(lambda a,b: a + b)
-    fightCount.saveAsTextFile("./output1/")
+    # fightCount.saveAsTextFile("./output1/")
 
     # fightCount = joinRDD.collect()
     # print(fightCount[0][1][0])
