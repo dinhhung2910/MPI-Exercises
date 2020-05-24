@@ -1,6 +1,5 @@
 # Vector addition using only one GPU thread
 nvcc vector_add.cu -o vector_add
-time ./vector_add
 nvprof ./vector_add
 
 # Parallelizing vector addition using multithread
